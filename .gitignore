@@ -1,0 +1,11 @@
+/*
+
+!/.gitignore
+!/Assets
+!/ProjectSettings
+!GodTouch.unitypackage
+!README.md
+
+.DS_Store
+*.DS_Store
+*~
