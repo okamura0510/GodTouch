@@ -3,9 +3,9 @@
 namespace GodTouches
 {
     /// <summary>
-	/// GodTouch
+    /// GodTouch
     /// </summary>
-	public static class GodTouch
+    public static class GodTouch
     {
 		/// <summary>
 		/// Androidフラグ
@@ -26,12 +26,12 @@ namespace GodTouches
 		static Vector3 prebPosition;
 		 
         /// <summary>
-		/// タッチ情報を取得(エディタとスマホを考慮)
+	/// タッチ情報を取得(エディタとスマホを考慮)
         /// </summary>
         /// <returns>タッチ情報</returns>
-		public static GodTouchPhase GetPhase()
+	public static GodTouchPhase GetPhase()
         { 
-			if (IsEditor)
+	    if (IsEditor)
             {
 				if (Input.GetMouseButtonDown(0)) 
 				{
@@ -55,7 +55,7 @@ namespace GodTouches
         }
 
         /// <summary>
-		/// タッチポジションを取得(エディタとスマホを考慮)
+	/// タッチポジションを取得(エディタとスマホを考慮)
         /// </summary>
         /// <returns>タッチポジション。タッチされていない場合は (0, 0, 0)</returns>
 		public static Vector3 GetPosition()
