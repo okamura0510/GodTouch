@@ -23,16 +23,16 @@ namespace GodTouches
 
 			// タッチを検出して動かす
 			var phase = GodTouch.GetPhase ();
-			if (phase == GodTouchPhase.Began) 
+            if (phase == GodPhase.Began) 
 			{
 				startPos = Move.position;
 			}
-			else if (phase == GodTouchPhase.Moved) 
+            else if (phase == GodPhase.Moved) 
 			{
 				Move.position = GodTouch.GetPosition();
 //				Move.position += GodTouch.GetDeltaPosition(); 
 			}
-			else if (phase == GodTouchPhase.Ended) 
+            else if (phase == GodPhase.Ended) 
 			{
 				Move.position = startPos;
 			}

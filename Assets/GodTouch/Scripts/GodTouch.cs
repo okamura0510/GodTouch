@@ -29,29 +29,29 @@ namespace GodTouches
         /// タッチ情報を取得(エディタとスマホを考慮)
         /// </summary>
         /// <returns>タッチ情報</returns>
-        public static GodTouchPhase GetPhase()
+        public static GodPhase GetPhase()
         { 
             if (IsEditor)
             {
                 if (Input.GetMouseButtonDown(0)) 
                 {
                     prebPosition = Input.mousePosition;
-                    return GodTouchPhase.Began;
+                    return GodPhase.Began;
                 }
                 else if (Input.GetMouseButton(0))     
                 {
-                    return GodTouchPhase.Moved;
+                    return GodPhase.Moved;
                 }
                 else if (Input.GetMouseButtonUp(0)) 
                 {
-                    return GodTouchPhase.Ended;
+                    return GodPhase.Ended;
                 }
             }
             else 
             {
-                if (Input.touchCount > 0) return (GodTouchPhase)((int)Input.GetTouch(0).phase);
+                if (Input.touchCount > 0) return (GodPhase)((int)Input.GetTouch(0).phase);
             } 
-            return GodTouchPhase.None;
+            return GodPhase.None;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace GodTouches
         { 
             if (IsEditor)
             {
-                if (GetPhase() != GodTouchPhase.None) return Input.mousePosition;
+                if (GetPhase() != GodPhase.None) return Input.mousePosition;
             }
             else
             {
@@ -80,7 +80,7 @@ namespace GodTouches
             if (IsEditor)
             {
                 var phase = GetPhase();
-                if(phase != GodTouchPhase.None)
+                if(phase != GodPhase.None)
                 {
                     var now = Input.mousePosition;
                     var delta = now - prebPosition;
@@ -99,7 +99,7 @@ namespace GodTouches
     /// <summary>
     /// タッチ情報。UnityEngine.TouchPhase に None の情報を追加拡張。
     /// </summary>
-    public enum GodTouchPhase 
+    public enum GodPhase 
     {
         None       = -1,
         Began      = 0, 
