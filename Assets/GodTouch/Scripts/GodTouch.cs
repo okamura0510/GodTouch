@@ -10,11 +10,11 @@ namespace GodTouches
         /// <summary>
         /// Androidフラグ
         /// </summary>
-        static bool IsAndroid = Application.platform == RuntimePlatform.Android;
+        static readonly bool IsAndroid = Application.platform == RuntimePlatform.Android;
         /// <summary>
         /// iOSフラグ
         /// </summary>
-        static bool IsIOS = Application.platform == RuntimePlatform.IPhonePlayer;
+        static readonly bool IsIOS = Application.platform == RuntimePlatform.IPhonePlayer;
         /// <summary>
         /// エディタフラグ
         /// </summary> 
